@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "React-native-Practice",
-    "slug": "React-native-Practice",
+    "name": "Lofi",
+    "slug": "Lofi",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "Lofi",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
