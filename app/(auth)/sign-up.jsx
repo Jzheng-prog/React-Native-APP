@@ -5,35 +5,33 @@ import FormField from '../../components/FormField'
 import { useState } from 'react'
 import CustomButton from '../../components/CustomButton'
 import { Link, router } from 'expo-router'
-import { getCurrentUser, signIn } from '../../lib/appwrite'
-import { useGlobalContext } from '../../context/GlobalProvider'
-const SignIn = () => {
+import { createUser } from '../../lib/appwrite'
+const SignUp = () => {
   const [form, setForm] = useState({
+    username:'',
     email:'',
     password:''
   })
 
   const [submitting, setIsSubmitting] = useState(false)
-  const {setUser, setIsLoggedIn} = useGlobalContext()
 
   const submit = async () =>{
 
     // console.log(form)
-    if(!form.email || !form.password){
+    if(!form.username || !form.email || !form.password){
       Alert.alert('Error', 'Please fill in all the field!')
     }
     setIsSubmitting(true)
     
     try{
-      await signIn(form.email,form.password);
-      const result = await getCurrentUser();
-      setUser(result)
-      setIsLoggedIn(true)
-      Alert.alert('Success', 'User signed in successfully')
+      const result = await createUser({
+        email: form.email,
+        password: form.password,
+        username: form.username
+    });
       router.replace('/home')
     }catch(error){
       Alert.alert('Error', error.message)
-    
     }finally{
       setIsSubmitting(false)
     }
@@ -44,6 +42,14 @@ const SignIn = () => {
         <View className='w-full justify-center min-h-[75vh] px-4 my-6'>
           <Image source={images.logo} resizeMode='contain' className='w-[115px] h-[35px]'/>
           <Text className='text-white text-semibold text-2xl mt-10 font-psemibold'>Log in to Aora</Text>
+          <FormField
+          title='Username'
+          value={form.username}
+          handleChangeText={
+            (e)=>setForm({...form, username: e})
+          }
+          otherStyles='mt-10'
+          />
           <FormField
           title='Email'
           value={form.email}
@@ -63,15 +69,15 @@ const SignIn = () => {
           />
           <CustomButton 
             handlePress={submit}
-            text='Log in'
+            text='Sign Up'
             containerStyle='mt-7'
             isLoading={submitting}
           />
           <View className='flex-row items-center justify-center pt-5 gap-2'>
             <Text className='text-lg text-gray-100 font-pregular'>
-              Dont Have an Account?
+              Have an Account?
             </Text>
-            <Link href='/sign-up' className='text-lg text-secondary font-psemibold'>Sign Up</Link>
+            <Link href='/sign-in' className='text-lg text-secondary font-psemibold'>Log in</Link>
           </View>
 
         </View>
@@ -80,6 +86,6 @@ const SignIn = () => {
   )
 }
 
-export default SignIn
+export default SignUp
 
 const styles = StyleSheet.create({})
