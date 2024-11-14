@@ -4,16 +4,16 @@ import {Redirect, router} from 'expo-router'
 import {SafeAreaView } from 'react-native-safe-area-context'
 import {images} from '../constants'
 import CustomButton from '../components/CustomButton'
-import ExpoStatusBar from 'expo-status-bar/build/ExpoStatusBar'
+import { StatusBar } from 'expo-status-bar';
 import { useGlobalContext } from '../context/GlobalProvider'
 
 export default function App(){
 
   const {isLoading, isLoggedin} = useGlobalContext()
 
-  if (isLoading) {
-    return <Text>Loading...</Text>; // or a loading spinner
- }
+//   if (isLoading) {
+//     return <Text>Loading...</Text>; // or a loading spinner
+//  }
 
 
   if(!isLoading && isLoggedin){
@@ -42,7 +42,7 @@ export default function App(){
             />
         </View>
       </ScrollView>
-      <ExpoStatusBar backgroundColor='#161622' style='light'/>
+      <StatusBar backgroundColor='#161622' style='light'/>
     </SafeAreaView>
   )
 }

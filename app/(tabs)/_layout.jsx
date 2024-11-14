@@ -7,28 +7,28 @@ const TabsLayout = () => {
 
   const TabIcon = ({icon, color, name, focused}) =>{
     return (
-      <View className='items-center justify-center gap-2'>
+      <View className='items-center justify-center gap-2 border border-blue-500'>
         <Image source={icon} resizeMode='contain' className='w-6 h-6' tintColor={color}/>
-        <Text className={`${focused ? 'font-psemibold':'font-pregular'} text-xs`} style={{color:color}}>
+        {/* <Text className={`${focused ? 'font-psemibold':'font-pregular'} text-xs`} style={{color:color}}>
           {name}
-        </Text>
+        </Text> */}
       </View>
     )
   }
   return (
     <>
       <Tabs screenOptions={{
-        tabBarShowLabel:false,
+        tabBarShowLabel:true,
         tabBarActiveTintColor:'#FFA001',
         tabBarInactiveTintColor:'#CDCDE0',
         tabBarStyle:{
           backgroundColor:'#161622',
           borderTopWidth:1,
           borderTopColor: '#232533',
-          height:84
+          height:100,
         }
       }}>
-        <Tabs.Screen name= 'home' 
+        <Tabs.Screen name='home' 
           options={{
             title:'Home',
             headerShown:false,
