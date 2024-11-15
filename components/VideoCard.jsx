@@ -41,7 +41,7 @@ const VideoCard = ({title, thumbnail,video,avatar,username}) => {
                 <Image source={{uri:thumbnail}} className='w-full h-full rounded-xl' resizeMode='cover'/>
                 <Image source={icons.play} className='w-12 h-12 absolute' resizeMode='contain'/>
             </TouchableOpacity>
-        )}r
+        )}
     </View>
   )
 }
