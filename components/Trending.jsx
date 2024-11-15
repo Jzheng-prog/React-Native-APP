@@ -5,12 +5,9 @@ import {
   Image,
   ImageBackground,
   TouchableOpacity,
-  Text
 } from "react-native";
-
-import { useEvent } from 'expo';
 import { useVideoPlayer, VideoView } from 'expo-video';
-import { StyleSheet, View, Button } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import { icons } from "../constants";
 
