@@ -8,6 +8,7 @@ import EmptyState from '../../components/EmptyState'
 import {getAllPost, getLatestPost} from '../../lib/appwrite'
 import useAppwrite from '../../lib/useAppwrite'
 import VideoCard from '../../components/VideoCard'
+import { useGlobalContext } from '../../context/GlobalProvider'
 
 const Home = () => {
 
@@ -15,6 +16,7 @@ const Home = () => {
 
   const {data:posts, refetch} = useAppwrite(getAllPost)
   const {data:lastestPosts,} = useAppwrite(getLatestPost)
+  const {user, setUser, setIsLoggedin} = useGlobalContext()
 
   const onRefresh = async () => {
     setRefreshing(true)
@@ -44,10 +46,10 @@ const Home = () => {
             <View className='border border-white justify-between items-start flex-row mb-6'>
               <View className='border border-white'>
                 <Text className='text-sm text-gray-100 font-pmedium'>
-                  Welcome Back
+                  Welcome Back,
                 </Text>
                 <Text className='text-2xl text-gray-100 font-pmedium'>
-                  Aora
+                  {user?.username}
                 </Text>
               </View>
 

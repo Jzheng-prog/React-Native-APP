@@ -3,19 +3,31 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import SearchInput from '../../components/SearchInput'
 import EmptyState from '../../components/EmptyState'
-import {getUserPost} from '../../lib/appwrite'
+import {getUserPost, signOut} from '../../lib/appwrite'
 import useAppwrite from '../../lib/useAppwrite'
 import VideoCard from '../../components/VideoCard'
 import {useGlobalContext} from '../../context/GlobalProvider'
 import { icons } from '../../constants'
 import InfoBox from '../../components/InfoBox'
+import { router } from 'expo-router'
 const Profile = () => {
 
-  const {user, setUser, setIsLoggedin} = useGlobalContext()
+  const {user, setUser,isLoggedIn, setIsLoggedIn} = useGlobalContext()
   const {data:posts, refetch} = useAppwrite(()=>getUserPost(user.$id))
-  const logout = () =>{
 
-  }
+  const logout = async () => {
+    try {
+      await signOut(); // Log out the user
+      setUser(null);
+      setIsLoggedIn(false);
+      // console.log('User logged out, redirecting to /sign-in');
+      router.replace('/sign-in'); // Redirect to sign-in
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
+  };
+  
+
   return (
     <SafeAreaView className='bg-primary h-full'>
       <FlatList
@@ -34,7 +46,7 @@ const Profile = () => {
         )}
         ListHeaderComponent={()=>(
           <View className='w-full justify-center items-center mt-6 mb-12 px-4'>
-            <TouchableOpacity className='items-end w-full mb-10'>
+            <TouchableOpacity className='items-end w-full mb-10' onPress={logout}>
               <Image source={icons.logout} className='w-6 h-6]' resizeMode='contain'/>
             </TouchableOpacity>
             <View className='w-16 h-16 border border-secondary justify-center items-center rounded-lg'>
