@@ -26,9 +26,9 @@ export const GlobalProvider = ({children}) => {
             setIsLoading(false)
         })
     },[])
-    // useEffect(()=>{
-    //     console.log('inside globalprovider:', {isLoggedIn,user,isLoading})
-    // },[isLoggedIn,user])
+    useEffect(()=>{
+        console.log('inside globalprovider:', {isLoggedIn,user,isLoading})
+    },[isLoggedIn,user])
     return(
         <GlobalContext.Provider value={{isLoading, user, isLoggedIn, setIsLoading, setIsLoggedIn, setUser}}>
             {children}

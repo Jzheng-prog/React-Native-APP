@@ -1,5 +1,5 @@
 import {Image, Text, View, ScrollView } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Redirect, router} from 'expo-router'
 import {SafeAreaView } from 'react-native-safe-area-context'
 import {images} from '../constants'
@@ -9,17 +9,20 @@ import { useGlobalContext } from '../context/GlobalProvider'
 
 export default function App(){
 
-  const {isLoading, isLoggedin} = useGlobalContext()
+  const {isLoading, isLoggedIn} = useGlobalContext()
 
 //   if (isLoading) {
 //     return <Text>Loading...</Text>; // or a loading spinner
 //  }
 
 
-  if(!isLoading && isLoggedin){
+  if(!isLoading && isLoggedIn){
 
     return (<Redirect href='/home'/>)
   }
+  useEffect(()=>{
+    console.log({isLoading,isLoggedIn})
+  },[isLoading, isLoggedIn])
   return (
     <SafeAreaView className='bg-primary h-full'>
       <ScrollView contentContainerStyle={{height:'100%'}}>
