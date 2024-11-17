@@ -60,7 +60,7 @@ const Create = () => {
   
   const submit = async ()=>{
     setClickedSubmit(!clickedSubmit)
-    console.log("User context before submission:", user);
+    // console.log("User context before submission:", user.$id);
     if (!user || !user.$id) {
       return Alert.alert('Error', 'User information is missing. Please log in again.');
     }
@@ -68,13 +68,13 @@ const Create = () => {
       return Alert.alert('Please fill in all the fields.')
     }
 
-    console.log("userssss:", user)
+    // console.log("userId:", user.$id)
 
     setUploading(true)
 
     try{
 
-      await createVideo({...form, userId:user.$id})
+      await createVideo({...form, userId: user.$id})
       Alert.alert('Sucess', 'Post uploaded successfully!')
       router.push('/home')
     }catch(error){
@@ -90,10 +90,10 @@ const Create = () => {
     }
   }
 
-  useEffect(()=>{
-      console.log("Clicked", clickedSubmit)
-      console.log("User in useEffect:", user)
-  },[clickedSubmit])
+  // useEffect(()=>{
+  //     // console.log("Clicked", clickedSubmit)
+  //     console.log("User in useEffect:", user.$id)
+  // },[clickedSubmit])
   return (
     <SafeAreaView className='bg-primary h-full'>
       <ScrollView className='border border-white px-4 my-6'>

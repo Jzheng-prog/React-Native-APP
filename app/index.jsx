@@ -20,9 +20,9 @@ export default function App(){
 
     return (<Redirect href='/home'/>)
   }
-  useEffect(()=>{
-    console.log({isLoading,isLoggedIn})
-  },[isLoading, isLoggedIn])
+  // useEffect(()=>{
+  //   console.log({isLoading,isLoggedIn})
+  // },[isLoading, isLoggedIn])
   return (
     <SafeAreaView className='bg-primary h-full'>
       <ScrollView contentContainerStyle={{height:'100%'}}>
