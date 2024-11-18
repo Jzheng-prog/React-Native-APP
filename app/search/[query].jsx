@@ -19,7 +19,7 @@ const Search = () => {
   return (
     <SafeAreaView className='bg-primary h-full'>
       <FlatList
-        className='border border-white'
+        
         // data={[]}
         data={posts}
         keyExtractor={(item)=>item.$id}
@@ -33,7 +33,7 @@ const Search = () => {
           />
         )}
         ListHeaderComponent={()=>(
-          <View className='border border-white my-6 px-4'>
+          <View className='my-6 px-4'>
             
             <Text className='text-sm text-gray-100 font-pmedium'>
               Search results for

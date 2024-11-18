@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View,FlatList, TouchableOpacity, Image} from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View,FlatList, TouchableOpacity, Image,RefreshControl} from 'react-native'
+import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import SearchInput from '../../components/SearchInput'
 import EmptyState from '../../components/EmptyState'
@@ -14,6 +14,16 @@ const Profile = () => {
 
   const {user, setUser,isLoggedIn, setIsLoggedIn} = useGlobalContext()
   const {data:posts, refetch} = useAppwrite(()=>getUserPost(user.$id))
+
+
+  const [refreshing, setRefreshing] = useState(false)
+
+  const onRefresh = async () => {
+    setRefreshing(true)
+    await refetch()
+    setRefreshing(false)
+
+  }
 
   const logout = async () => {
     try {
@@ -31,7 +41,6 @@ const Profile = () => {
   return (
     <SafeAreaView className='bg-primary h-full'>
       <FlatList
-        className='border border-white'
         // data={[]}
         data={posts}
         keyExtractor={(item)=>item.$id}
@@ -47,7 +56,7 @@ const Profile = () => {
         ListHeaderComponent={()=>(
           <View className='w-full justify-center items-center mt-6 mb-12 px-4'>
             <TouchableOpacity className='items-end w-full mb-10' onPress={logout}>
-              <Image source={icons.logout} className='w-6 h-6]' resizeMode='contain'/>
+              <Image source={icons.logout} className='w-6 h-6' resizeMode='contain'/>
             </TouchableOpacity>
             <View className='w-16 h-16 border border-secondary justify-center items-center rounded-lg'>
               <Image source={{uri:user?.avatar}} className='w-[90%] h-[90%] rounded-lg' resizeMode='cover'/>
@@ -66,6 +75,8 @@ const Profile = () => {
         ListEmptyComponent={()=>(
           <EmptyState title='No Videos Found' subtitle='No videos found for this search.'/>
         )}
+        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>}
+
       />
     </SafeAreaView>
   )

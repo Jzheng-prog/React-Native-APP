@@ -7,7 +7,7 @@ const TabsLayout = () => {
 
   const TabIcon = ({icon, color, name, focused}) =>{
     return (
-      <View className='items-center justify-center gap-2 border border-blue-500'>
+      <View className='items-center justify-center gap-2'>
         <Image source={icon} resizeMode='contain' className='w-6 h-6' tintColor={color}/>
         {/* <Text className={`${focused ? 'font-psemibold':'font-pregular'} text-xs`} style={{color:color}}>
           {name}

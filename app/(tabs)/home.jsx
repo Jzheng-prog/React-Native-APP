@@ -24,11 +24,10 @@ const Home = () => {
     setRefreshing(false)
 
   }
-  // console.log({posts})
   return (
     <SafeAreaView className='bg-primary h-full'>
       <FlatList
-        className='border border-white'
+        
         // data={[]}
         data={posts}
         keyExtractor={(item)=>item.$id}
@@ -42,9 +41,9 @@ const Home = () => {
           />
         )}
         ListHeaderComponent={()=>(
-          <View className='border border-white my-6 px-4 space-y-6'>
-            <View className='border border-white justify-between items-start flex-row mb-6'>
-              <View className='border border-white'>
+          <View className='my-6 px-4 space-y-6'>
+            <View className='justify-between items-start flex-row mb-6'>
+              <View>
                 <Text className='text-sm text-gray-100 font-pmedium'>
                   Welcome Back,
                 </Text>
@@ -59,7 +58,7 @@ const Home = () => {
             </View>
             <SearchInput/>
 
-            <View className='w-full flex-1 pt-5 pb-8 border border-gray-300'>
+            <View className='w-full flex-1 pt-5 pb-8'>
               <Text className='text-gray-100 text-lg font-pregular mb-3'>
                 Lastest Videos
               </Text>

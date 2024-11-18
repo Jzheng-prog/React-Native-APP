@@ -4,7 +4,7 @@ import {icons} from '../constants'
 import { TouchableOpacity } from 'react-native'
 import { router, usePathname } from 'expo-router'
 
-const SearchInput = ({initialQuery}) => {
+const SearchInput = ({initialQuery, placeholder='Search for a video Topic'}) => {
 
   const pathname = usePathname()
   const [query,setQuery] = useState(initialQuery||'')
@@ -14,7 +14,7 @@ const SearchInput = ({initialQuery}) => {
         <TextInput 
             className=' text-white text-base mt-0.5 flex-1 font-pregular'
             value={query}
-            placeholder='Search for a video Topic'
+            placeholder={placeholder}
             onChangeText={(e)=>setQuery(e)}
             placeholderTextColor='#CDCDE0'
         />
