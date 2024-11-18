@@ -24,7 +24,7 @@ A full-stack **React Native** application built with **Expo, NativeWind, and App
 <img src=https://github.com/user-attachments/assets/9152a417-2855-4a0b-b020-3e6b100397a7 width="300"/>
 <img src=https://github.com/user-attachments/assets/f6cc57e2-854f-4d26-a099-0ce9f87cb64a width="300"/>
 
-# Tab Navigation (home,Bookmark,Create,Profile)
+# Tab Navigation (Home,Bookmark,Create,Profile)
 <img src=https://github.com/user-attachments/assets/381f8472-949d-4eaf-a6d7-80ec0b307853 width="300"/>
 <img src=https://github.com/user-attachments/assets/85faae2f-aacf-465e-b80d-64742ebe9001 width="300"/>
 <img src=https://github.com/user-attachments/assets/36094b42-d079-4b57-a83b-025e2fab043a width="300"/>
