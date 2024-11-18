@@ -2,7 +2,7 @@
 
 ## Overview
 
-A full-stack React Native application built with Expo, NativeWind, and Appwrite. This app includes features like user authentication, video uploads, tab navigation, and user sessions, providing a seamless mobile experience.
+A full-stack **React Native** application built with **Expo, NativeWind, and Appwrite**. This app includes features like user authentication, video uploads, tab navigation, and user sessions, providing a seamless mobile experience.
 
 ## Features
 
@@ -21,14 +21,14 @@ A full-stack React Native application built with Expo, NativeWind, and Appwrite.
 ## Pages
 
 # Sign-up/Login Page
-<img src=https://github.com/user-attachments/assets/9152a417-2855-4a0b-b020-3e6b100397a7/>
-<img src=https://github.com/user-attachments/assets/f6cc57e2-854f-4d26-a099-0ce9f87cb64a/>
+<img src=https://github.com/user-attachments/assets/9152a417-2855-4a0b-b020-3e6b100397a7 width="300"/>
+<img src=https://github.com/user-attachments/assets/f6cc57e2-854f-4d26-a099-0ce9f87cb64a width="300"/>
 
 # Tab Navigation (home,Bookmark,Create,Profile)
-<img src=https://github.com/user-attachments/assets/381f8472-949d-4eaf-a6d7-80ec0b307853/>
-<img src=https://github.com/user-attachments/assets/85faae2f-aacf-465e-b80d-64742ebe9001/>
-<img src=https://github.com/user-attachments/assets/36094b42-d079-4b57-a83b-025e2fab043a/>
-<img src=https://github.com/user-attachments/assets/04bec60e-0c13-4ac4-9485-b3b238fe598c/>
+<img src=https://github.com/user-attachments/assets/381f8472-949d-4eaf-a6d7-80ec0b307853 width="300"/>
+<img src=https://github.com/user-attachments/assets/85faae2f-aacf-465e-b80d-64742ebe9001 width="300"/>
+<img src=https://github.com/user-attachments/assets/36094b42-d079-4b57-a83b-025e2fab043a width="300"/>
+<img src=https://github.com/user-attachments/assets/04bec60e-0c13-4ac4-9485-b3b238fe598c width="300"/>
 
 ### Prerequisites
 
