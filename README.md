@@ -6,10 +6,10 @@ A full-stack React Native application built with Expo, NativeWind, and Appwrite.
 
 ## Features
 
-- **User Authentication: Secure sign-up and login using Appwrite.
-- **Video Upload: Users can upload videos to the cloud and manage them.
-- **Tab Navigation: Easy navigation between different screens with React Navigation and tab-based layout.
-- **User Session: Authentication status is stored and persisted across app sessions.
+- **User Authentication**: Secure sign-up and login using Appwrite.
+- **Video Upload**: Users can upload videos to the cloud and manage them.
+- **Tab Navigation**: Easy navigation between different screens with React Navigation and tab-based layout.
+- **User Session**: Authentication status is stored and persisted across app sessions.
 
 ## Tech Stack
 
